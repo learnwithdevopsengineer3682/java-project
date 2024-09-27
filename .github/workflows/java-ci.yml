@@ -35,6 +35,10 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-gradle-
 
+      # Step 4: Make Gradle wrapper executable
+    - name: Make gradlew executable
+      run: chmod +x ./gradlew
+
     # Step 4: Build the project and run tests
     - name: Build with Gradle
       run: ./gradlew build --no-daemon
