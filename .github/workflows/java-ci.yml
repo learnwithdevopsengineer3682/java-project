@@ -25,6 +25,10 @@ jobs:
       with:
         distribution: 'zulu' # See 'Supported distributions' for available options
         java-version: '21'
+    
+        # Step 4: Make Gradle wrapper executable
+    - name: Make gradlew executable
+      run: chmod +x ./gradlew
 
     # Step 3: Cache Gradle dependencies to speed up future builds
     - name: Cache Gradle packages
@@ -34,10 +38,6 @@ jobs:
         key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
         restore-keys: |
           ${{ runner.os }}-gradle-
-
-      # Step 4: Make Gradle wrapper executable
-    - name: Make gradlew executable
-      run: chmod +x ./gradlew
 
     # Step 4: Build the project and run tests
     - name: Build with Gradle
