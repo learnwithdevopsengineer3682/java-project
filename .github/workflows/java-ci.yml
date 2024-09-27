@@ -26,4 +26,8 @@ jobs:
         key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
         restore-keys: |
           ${{ runner.os }}-gradle-
+
+    # Step 5: Build the project and run tests
+    - name: Build with Gradle
+      run: ./gradlew build --no-daemon
     
