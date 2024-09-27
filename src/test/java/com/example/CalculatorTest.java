@@ -17,7 +17,7 @@ public class CalculatorTest {
     public void testSubtract() {
         Calculator calculator = new Calculator();
         // Intentionally causing this test to fail
-        assertEquals(1, calculator.subtract(3, 2), "3 - 2 should equal 1"); // This should be 1, but we expected 2
+        assertEquals(2, calculator.subtract(3, 2), "3 - 2 should equal 1"); // This should be 1, but we expected 2
         assertEquals(-1, calculator.subtract(2, 3), "2 - 3 should equal -1");
     }
 }
